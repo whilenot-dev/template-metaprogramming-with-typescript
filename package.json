@@ -1,0 +1,21 @@
+{
+  "name": "metaprogramming-with-typescript",
+  "version": "1.0.0",
+  "description": "Playground for a blog post about metaprogramming with TypeScript",
+  "type": "module",
+  "scripts": {
+    "start:1": "./src/1_template_literals.js | ./scripts/prettier-stdin.sh",
+    "start:2": "./src/2_template_engine.js   | ./scripts/prettier-stdin.sh",
+    "start:3": "./src/3_typescript_ast.js    | ./scripts/prettier-stdin.sh"
+  },
+  "keywords": [],
+  "author": "github@whilenot.dev",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.8",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  }
+}

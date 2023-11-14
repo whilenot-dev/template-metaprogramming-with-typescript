@@ -1,0 +1,14 @@
+[
+  {
+    "name": "A",
+    "type": "boolean"
+  },
+  {
+    "name": "B",
+    "type": "number"
+  },
+  {
+    "name": "C",
+    "type": "string"
+  }
+]
