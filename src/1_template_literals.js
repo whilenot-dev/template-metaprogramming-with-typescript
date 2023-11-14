@@ -13,18 +13,16 @@ function main() {
       (val) => `interface SomeInterface${val.name} {
   discriminator: "${val.name}";
   type: ${val.type};
-}`,
+}
+`,
     )
-    .join("\n\n");
+    .join("\n");
   const union =
-    data
-      .reduce(
-        (acc, val) => acc + `SomeInterface${val.name} | `,
-        "export type SomeInterface = ",
-      )
-      .slice(0, -3) + ";\n";
+    "export type SomeInterface = " +
+    data.map((val) => `SomeInterface${val.name}`).join(" | ") +
+    ";\n";
 
-  const result = [interfaces, union].join("\n\n");
+  const result = [interfaces, union].join("\n");
 
   const filename = fileURLToPath(import.meta.url);
   const basename = path.basename(filename);
