@@ -48,6 +48,21 @@ The methods to output a TypeScript file include source code generation via:
 1. [A template engine](./src/2_template_engine.js)
 1. [The TypeScript compiler API](./src/3_typescript_ast.js)
 
+## Prerequisites
+
+Make sure you have the following tools installed and available in the `$PATH` environment variable:
+
+- [node](https://nodejs.org/dist/) - any recent version (`>=14.17`) should do, or you can find the exact version in the [.tool-versions](./.tool-versions) file for [asdf-vm](https://asdf-vm.com/guide/getting-started.html)
+- [npm](https://www.npmjs.com/package/npm) - that one usually ships with `node`
+
+## Setup
+
+Install all dependencies with:
+
+```bash
+$ npm ci
+```
+
 ## Usage
 
 Either build the project and inspect the output files in [./dist](./dist):
@@ -56,7 +71,7 @@ Either build the project and inspect the output files in [./dist](./dist):
 $ npm run build
 ```
 
-Or Launch the generate:\*-scripts one-by-one to inspect their output in STDOUT:
+...or execute the `generate:*`-scripts one-by-one to inspect their output in the console:
 
 ```bash
 $ npm run -s generate:1
