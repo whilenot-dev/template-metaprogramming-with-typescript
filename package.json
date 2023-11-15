@@ -1,12 +1,19 @@
 {
-  "name": "metaprogramming-with-typescript",
+  "name": "template-metaprogramming-with-typescript",
   "version": "1.0.0",
-  "description": "Playground for a blog post about metaprogramming with TypeScript",
+  "description": "Playground for a blog post about template metaprogramming with TypeScript",
   "type": "module",
   "scripts": {
-    "start:1": "./src/1_template_literals.js | ./scripts/prettier-stdin.sh .ts",
-    "start:2": "./src/2_template_engine.js   | ./scripts/prettier-stdin.sh .ts",
-    "start:3": "./src/3_typescript_ast.js    | ./scripts/prettier-stdin.sh .ts"
+    "bootstrap": "mkdir -p ./dist",
+    "build": "npm run -s build:1 && npm run -s build:2 && npm run -s build:3",
+    "build:1": "npm run -s generate:1 > ./dist/1_template_literals.ts",
+    "build:2": "npm run -s generate:2 > ./dist/2_template_engine.ts",
+    "build:3": "npm run -s generate:3 > ./dist/3_typescript_ast.ts",
+    "clean": "rm -rf ./dist",
+    "generate:1": "./src/1_template_literals.js | ./scripts/prettier-stdin.sh .ts",
+    "generate:2": "./src/2_template_engine.js   | ./scripts/prettier-stdin.sh .ts",
+    "generate:3": "./src/3_typescript_ast.js    | ./scripts/prettier-stdin.sh .ts",
+    "prebuild": "npm run -s bootstrap"
   },
   "keywords": [],
   "author": "github@whilenot.dev",

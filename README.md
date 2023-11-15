@@ -1,8 +1,8 @@
-# Metaprogramming with TypeScript
+# Template metaprogramming with TypeScript
 
-This is the playground for a [blog post](https://blog.whilenot.dev/posts/metaprogramming-with-typescript/) about [metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming) with TypeScript.
+This is the playground for a [blog post](https://blog.whilenot.dev/posts/template-metaprogramming-with-typescript/) about [template metaprogramming](https://en.wikipedia.org/wiki/Template_metaprogramming) with TypeScript.
 
-I take [these data](./data/input.json) as input via JSON:
+I take the following data as input via [JSON](./data/input.json):
 
 ```json
 [
@@ -21,7 +21,7 @@ I take [these data](./data/input.json) as input via JSON:
 ]
 ```
 
-...and output the following valid TypeScript file in three different ways:
+...and generate the following TypeScript file in three different ways:
 
 ```typescript
 interface SomeInterfaceA {
@@ -42,24 +42,32 @@ interface SomeInterfaceC {
 export type SomeInterface = SomeInterfaceA | SomeInterfaceB | SomeInterfaceC;
 ```
 
-The methods to output a TypeScript file include:
+The methods to output a TypeScript file include source code generation via:
 
 1. [Template literals](./src/1_template_literals.js)
 1. [A template engine](./src/2_template_engine.js)
-1. [The TypeScript AST](./src/3_typescript_ast.js)
+1. [The TypeScript compiler API](./src/3_typescript_ast.js)
 
 ## Usage
 
-Launch the scripts one-by-one and inspect their output:
+Either build the project and inspect the output files in [./dist](./dist):
 
 ```bash
-$ npm run -s start:1
+$ npm run build
+```
+
+Or Launch the generate:\*-scripts one-by-one to inspect their output in STDOUT:
+
+```bash
+$ npm run -s generate:1
 ```
 
 ```bash
-$ npm run -s start:2
+$ npm run -s generate:2
 ```
 
 ```bash
-$ npm run -s start:3
+$ npm run -s generate:3
 ```
+
+Have fun!
