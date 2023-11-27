@@ -5,20 +5,23 @@
   "type": "module",
   "scripts": {
     "bootstrap": "mkdir -p ./dist",
-    "build": "npm run -s build:1 && npm run -s build:2 && npm run -s build:3",
+    "build": "npm run -s build:1 && npm run -s build:2 && npm run -s build:3 && npm run -s build:4",
     "build:1": "npm run -s generate:1 > ./dist/1_template_literals.ts",
-    "build:2": "npm run -s generate:2 > ./dist/2_template_engine.ts",
-    "build:3": "npm run -s generate:3 > ./dist/3_typescript_ast.ts",
+    "build:2": "npm run -s generate:2 > ./dist/2_writer_library.ts",
+    "build:3": "npm run -s generate:3 > ./dist/3_template_engine.ts",
+    "build:4": "npm run -s generate:4 > ./dist/4_typescript_ast.ts",
     "clean": "rm -rf ./dist",
     "generate:1": "./src/1_template_literals.js | ./scripts/prettier-stdin.sh .ts",
-    "generate:2": "./src/2_template_engine.js   | ./scripts/prettier-stdin.sh .ts",
-    "generate:3": "./src/3_typescript_ast.js    | ./scripts/prettier-stdin.sh .ts",
+    "generate:2": "./src/2_writer_library.js    | ./scripts/prettier-stdin.sh .ts",
+    "generate:3": "./src/3_template_engine.js   | ./scripts/prettier-stdin.sh .ts",
+    "generate:4": "./src/4_typescript_ast.js    | ./scripts/prettier-stdin.sh .ts",
     "prebuild": "npm run -s bootstrap"
   },
   "keywords": [],
   "author": "github@whilenot.dev",
   "license": "MIT",
   "dependencies": {
+    "code-block-writer": "^12.0.0",
     "handlebars": "^4.7.8",
     "typescript": "^5.2.2"
   },
