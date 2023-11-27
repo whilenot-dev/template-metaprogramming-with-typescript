@@ -45,8 +45,8 @@ export type SomeInterface = SomeInterfaceA | SomeInterfaceB | SomeInterfaceC;
 The methods to output a TypeScript file include source code generation via:
 
 1. [Template literals](./src/1_template_literals.js)
-1. [A writer library](./src/2_writer_library.js)
-1. [A template engine](./src/3_template_engine.js)
+1. [A template engine](./src/2_template_engine.js)
+1. [A writer library](./src/3_writer_library.js)
 1. [The TypeScript compiler API](./src/4_typescript_ast.js)
 
 ## Prerequisites
@@ -80,12 +80,12 @@ $ npm run -s generate:1
 ```
 
 ```bash
-# A writer library
+# A template engine
 $ npm run -s generate:2
 ```
 
 ```bash
-# A template engine
+# A writer library
 $ npm run -s generate:3
 ```
 
