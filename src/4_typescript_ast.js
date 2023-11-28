@@ -10,40 +10,35 @@ import data from "../data/input.json" assert { type: "json" };
 main();
 
 function main() {
-  const statements = [
-    ...data.map(({ name, type }) =>
-      ts.factory.createInterfaceDeclaration(
-        undefined,
-        `SomeInterface${name}`,
-        undefined,
-        undefined,
-        [
-          ts.factory.createPropertySignature(
-            undefined,
-            "discriminator",
-            undefined,
-            ts.factory.createStringLiteral(name),
-          ),
-          ts.factory.createPropertySignature(
-            undefined,
-            "type",
-            undefined,
-            ts.factory.createIdentifier(type),
-          ),
-        ],
-      ),
-    ),
-    ts.factory.createTypeAliasDeclaration(
-      [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
-      "SomeInterface",
+  const interfaces = data.map(({ name, type }) =>
+    ts.factory.createInterfaceDeclaration(
       undefined,
-      ts.factory.createUnionTypeNode(
-        data.map((val) =>
-          ts.factory.createIdentifier(`SomeInterface${val.name}`),
+      `SomeInterface${name}`,
+      undefined,
+      undefined,
+      [
+        ts.factory.createPropertySignature(
+          undefined,
+          "discriminator",
+          undefined,
+          ts.factory.createStringLiteral(name),
         ),
-      ),
+        ts.factory.createPropertySignature(
+          undefined,
+          "type",
+          undefined,
+          ts.factory.createIdentifier(type),
+        ),
+      ],
     ),
-  ]
+  );
+  const union = ts.factory.createTypeAliasDeclaration(
+    [ts.factory.createToken(ts.SyntaxKind.ExportKeyword)],
+    "SomeInterface",
+    undefined,
+    ts.factory.createUnionTypeNode(interfaces.map((val) => val.name)),
+  );
+  const statements = [...interfaces, union]
     .flatMap((val) => [ts.factory.createIdentifier("\n"), val])
     .slice(1);
 
