@@ -1,6 +1,6 @@
-# Template metaprogramming with TypeScript
+# TypeScript source code generation
 
-This is the playground for a [blog post](https://blog.whilenot.dev/posts/template-metaprogramming-with-typescript/) about [template metaprogramming](https://en.wikipedia.org/wiki/Template_metaprogramming) with TypeScript.
+This is the playground for a [blog post](https://blog.whilenot.dev/posts/typescript-source-code-generation/) about [generative metaprogramming](https://en.wikipedia.org/wiki/Automatic_programming#Generative_programming) with TypeScript.
 
 I take the following data as input via [JSON](./data/input.json):
 

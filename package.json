@@ -1,5 +1,5 @@
 {
-  "name": "template-metaprogramming-with-typescript",
+  "name": "typescript-source-code-generation",
   "version": "1.0.0",
   "description": "Playground for a blog post about template metaprogramming with TypeScript",
   "type": "module",
